@@ -1,0 +1,3 @@
+LanguageEngine::Engine.routes.draw do
+  resources :languages
+end
