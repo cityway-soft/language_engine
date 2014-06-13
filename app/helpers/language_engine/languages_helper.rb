@@ -3,6 +3,7 @@ module LanguageEngine::LanguagesHelper
   def selected_language?( lang)
     (session[:language].nil? && lang=="fr") || lang==session[:language].to_s
   end
+ 
   def language_class( lang)
     "language #{lang}".tap do |css_classes|
       css_classes << " selected" if selected_language?(lang)

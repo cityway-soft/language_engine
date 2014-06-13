@@ -6,6 +6,8 @@ module LanguageEngine
       ActiveSupport.on_load(:action_controller) do
         require 'language_engine/language_support'
         include LanguageEngine::LanguageSupport
+
+        helper LanguageEngine::LanguagesHelper
       end
     end
     
