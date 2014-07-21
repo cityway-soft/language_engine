@@ -6,11 +6,11 @@ language_engine
 language_engine is a rails engine for language with :
  * a controller
  * a helper
- Views and assets are not defined because we think everybody wants to adapt the view in their page.
+Views and assets are not defined because we think everybody wants to adapt the view in their page.
 
- You can access to a demo on [http://appli.chouette.mobi](http://appli.chouette.mobi/chouette2/users/sign_in) with
-  * login : demo@chouette.mobi
-  * password : chouette
+You can access to a demo on [http://appli.chouette.mobi](http://appli.chouette.mobi/chouette2/users/sign_in) with
+ * login : demo@chouette.mobi
+ * password : chouette
 
 Requirements
 ------------
@@ -37,7 +37,7 @@ Usage (with bootstrap plugin)
 ----
 
 Can be used inline 
-```ruby
+```html
  <ul class="nav navbar-nav navbar-right">
    <li class="<%= language_class('fr') %>"><%= link_to_language :fr %></li>
    <li class="<%= language_class('en') %>"><%= link_to_language :en %></li>
@@ -45,7 +45,7 @@ Can be used inline
 ```
 
 Or with dropdown :
-```ruby
+```html
 <ul class="nav navbar-nav navbar-right">
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
