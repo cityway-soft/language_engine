@@ -6,6 +6,7 @@ language_engine
 language_engine is a rails engine for language with :
  * a controller
  * a helper
+
 Views and assets are not defined because we think everybody wants to adapt the view in their page.
 
 You can access to a demo on [http://appli.chouette.mobi](http://appli.chouette.mobi/chouette2/users/sign_in) with
