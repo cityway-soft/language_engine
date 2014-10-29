@@ -37,7 +37,21 @@ bundle install
 Usage (with bootstrap plugin)
 ----
 
-Can be used inline 
+First you must set local in your application controller for example :
+```ruby
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  before_filter :set_locale
+ 
+  def set_locale
+    I18n.locale = session[:language] || I18n.default_locale
+  end
+  
+end  
+
+```
+
+And then you can use it inline :  
 ```html
  <ul class="nav navbar-nav navbar-right">
    <li class="<%= language_class('fr') %>"><%= link_to_language :fr %></li>
@@ -48,16 +62,16 @@ Can be used inline
 Or with dropdown :
 ```html
 <ul class="nav navbar-nav navbar-right">
-  <li class="dropdown">
+  <li class="dropdown languages">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      <%= image_tag("language_engine/#{selected_language}_flag.png") %><b class='caret'></b>
+      <%= image_tag("language_engine/#{selected_language}_flag.png", { :'data-locale' => "#{selected_language}" } ) %><b class='caret'></b>
     </a>
     <ul class="dropdown-menu">
-      <li><%= link_to_language :fr %></li>
-      <li><%= link_to_language :en %></li>
+      <li><%= link_to_language :fr, { :class => language_class( :fr ) } %></li>
+      <li><%= link_to_language :en, { :class => language_class( :en  ) } %></li>
     </ul>
-  </li>        
-</ul>   
+  </li>
+</ul>  
 ```
 
 Test
