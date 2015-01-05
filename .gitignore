@@ -22,3 +22,5 @@ public/assets/
 .DS_Store
 chouette2.war
 vendor/bundle
+spec/dummy/log/*.log
+Gemfile.lock
