@@ -41,6 +41,7 @@ First you must set local in your application controller for example :
 ```ruby
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper LanguageEngine::Engine.helpers
   before_filter :set_locale
  
   def set_locale
